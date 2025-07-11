@@ -65,7 +65,11 @@ php artisan key:generate
 php artisan migrate
 ```
 
-6. Start the development server:
+6. Import data from jsonplaceholder
+```bash
+php artisan fetch:jsonplaceholder
+```
+7. Start the development server:
 ```bash
 php artisan serve
 `or`

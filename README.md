@@ -73,3 +73,14 @@ composer run dev
 ```
 
 The application will be available at `http://localhost:8000` or `http://127.0.0.1:8000`
+
+### API Documentation
+
+You can find all available endpoints and test the API using the Postman collection provided in the repository:
+`SLMP-Examination.postman_collection.json`
+
+Import this collection into Postman to:
+- View all available endpoints
+- Test the API with pre-configured requests
+- See example responses
+- Use the included authentication tokens

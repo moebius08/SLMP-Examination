@@ -87,4 +87,71 @@ Import this collection into Postman to:
 - View all available endpoints
 - Test the API with pre-configured requests
 - See example responses
-- Use the included authentication tokens
+---
+
+## 🔐 Authentication Guide
+
+This API uses **token-based authentication**. Follow the steps below to authenticate:
+
+### 1. 📝 Register a New User
+
+**Endpoint:** `POST /api/register`
+**Body (JSON):**
+
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "your_password",
+  "password_confirmation": "your_password"
+}
+```
+
+This will create a new user in the system.
+
+---
+
+### 2. 🔑 Login to Get Token
+
+**Endpoint:** `POST /api/login`
+**Body (JSON):**
+
+```json
+{
+  "login": "john@example.com",
+  "password": "your_password"
+}
+```
+
+**Response:**
+
+```json
+{
+  "access_token": "your_token_here",
+  "user": {}
+}
+```
+
+Copy the `access_token` value — you'll use this to authenticate further requests.
+
+---
+
+### 3. ✅ Authenticate Requests
+
+In **Postman**, do the following:
+
+* Go to the **Authorization** tab of any request.
+* Set **Type** to `Bearer Token`.
+* Paste your token into the **Token** field.
+
+Alternatively, you can manually set the header:
+
+```http
+Authorization: Bearer your_token_here
+```
+
+---
+
+Once authenticated, you can now access protected endpoints using the token. The Postman collection (`SLMP-Examination.postman_collection.json`) already includes this setup — just replace the token with yours under the Authorization tab.
+
+Make sure to check the rest of the Postman collection for example payloads and responses.
